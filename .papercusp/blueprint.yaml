@@ -1,0 +1,12 @@
+# Tiny work target for the cloud-frame work-on-frame verification
+# (cloud-deployment-layer-2026-06-06, P-013 extended step).
+id: frame-work-smoke
+extends: coding
+version: 0.1.0
+description: >-
+  Minimal coding harness used to prove a deployed frame's own loop
+  completes real work items (claude backend via the staged OAuth token).
+environment:
+  env:
+    AGENT_BACKEND: claude-code
+    AGENT_CMD: "claude -p --model haiku"
