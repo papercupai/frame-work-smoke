@@ -10,3 +10,9 @@ environment:
   env:
     AGENT_BACKEND: claude-code
     AGENT_CMD: "claude -p --model haiku"
+knobs:
+  parallelWorkers:
+    # Frames install node+npm only (no pnpm), and this repo has no build —
+    # the coding default `pnpm typecheck` is unrunnable here. A runnable
+    # trivial check keeps the L1 gate exercised without the fail-open path.
+    workingStateCheck: "node -e 0"
